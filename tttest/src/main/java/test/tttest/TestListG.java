@@ -444,26 +444,21 @@ public class TestListG {
 			edgeArr[count++] = temp;
 			i=edgeTmp.verpos;
 			edgeTmp = G.adjl[i].firstedge;
-			
 			verArr[count++] = G.adjl[i];
 			res = res + " " + G.adjl[i].word;
 		}
-		//System.out.println(res);
 		return res;
 	}
 
-	// 随机游走 最好图有高亮显示
+	// 随机游走 
 	public static String randomWalk(TestListG G) {
-
 		final TestListG g = G;
 		final JLabel lab = new JLabel();
 		String re = new String("aa");
 		final JFrame jf = new JFrame("随机游走");
-		
-		
 		JButton startBt = new JButton("开始");
 		JButton stopBt = new JButton("停止");
-
+		
 		startBt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lab.setText(randomWalkAssit(g));
@@ -476,17 +471,17 @@ public class TestListG {
 				jf.dispose();
 			}
 		});
-
+		
 		jf.setSize(500, 200);
 		jf.setLayout(new BorderLayout());
 		jf.add(startBt, BorderLayout.WEST);
 		jf.add(stopBt, BorderLayout.EAST);
 		jf.add(new JScrollPane(lab), BorderLayout.CENTER);
 		jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
+		
 		jf.setVisible(true);
-
 		return re;
-
 	}
     
   public static String reseverPath(TestListG g ,  MyList l , int start,int end , String father){
