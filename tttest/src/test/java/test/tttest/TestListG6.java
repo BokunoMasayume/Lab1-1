@@ -10,11 +10,11 @@ public class TestListG6 {
 	@Before
 	public void setUp() throws Exception {
 		G=TestListG.createDirectedGraph("test001.txt");
-		TestListG.showDirectedGraph(G);
 	}
+
 	@Test
-	public void testqueryBridgeWords() {
-		String expected="No bridge words from word1 to word2!";
-		assertEquals(expected,TestListG.queryBridgeWords(G, "come","out"));		
+	public void testgenerateNewText() {
+		assertEquals("new strange too ",TestListG.generateNewText(G, "new strange too"));
+		
 	}
 }

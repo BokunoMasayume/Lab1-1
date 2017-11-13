@@ -10,11 +10,17 @@ public class TestListG5 {
 	@Before
 	public void setUp() throws Exception {
 		G=TestListG.createDirectedGraph("test001.txt");
-		TestListG.showDirectedGraph(G);
 	}
+
 	@Test
-	public void testqueryBridgeWords() {
-		String expected="No bridge words from word1 to word2!";
-		assertEquals(expected,TestListG.queryBridgeWords(G, "too","and"));		
+	public void testgenerateNewText() {
+		String str1="too seek out ";
+		String str2="too get out ";
+		
+		if ((TestListG.generateNewText(G,"too out")==str1)||(TestListG.generateNewText(G,"too out")==str2))
+		{
+			assertNotNull(1);
+		}
+		
 	}
 }
